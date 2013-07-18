@@ -41,12 +41,12 @@ public class Rot {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			if (Character.isLowerCase(c))
+			if (c >= 'a' && c <= 'z')
 			{
 				// (int)(c - 'a') is the index of the current character in the array
 				sb.append(L26[(c - 'a' + 13) % 26]);
 			}
-			else if (Character.isUpperCase(c))
+			else if (c >= 'A' && c <= 'Z')
 			{
 				// (int)(c - 'A') is the index of the current character in the array
 				sb.append(U26[(c - 'A' + 13) % 26]);
@@ -77,15 +77,15 @@ public class Rot {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
-			if (Character.isDigit(c))
+			if (c >= '0' && c <= '9')
 			{
 				c = C62[(c - '0' + 31) % 62]; //c - '0' = index of original character 
 			}
-			else if (Character.isUpperCase(c))
+			else if (c >= 'A' && c <= 'Z')
 			{
 				c = C62[(c - 'A' + 41) % 62]; //c - 'A' + 10 = index of original character
 			}
-			else if (Character.isLowerCase(c))
+			else if (c >= 'a' && c <= 'z')
 			{
 				c = C62[(c - 'a' + 67) % 62]; //c - 'a' + 36 = index of original character
 			}
@@ -108,15 +108,15 @@ public class Rot {
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			c = ((i%2==0)?c:switchCase(c));
-			if (Character.isDigit(c))
+			if (c >= '0' && c <= '9')
 			{
 				c = C62[(c - '0' + 31) % 62]; //c - '0' = index of original character 
 			}
-			else if (Character.isUpperCase(c))
+			else if (c >= 'A' && c <= 'Z')
 			{
 				c = C62[(c - 'A' + 41) % 62]; //c - 'A' + 10 = index of original character
 			}
-			else if (Character.isLowerCase(c))
+			else if (c >= 'a' && c <= 'z')
 			{
 				c = C62[(c - 'a' + 67) % 62]; //c - 'a' + 36 = index of original character
 			}
